@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c123df9-c4fa-43ee-954a-98b61120b669" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bounce/BounceApp.java" afterPath="$PROJECT_DIR$/src/bounce/BounceApp.java" />
-    </list>
+    <list default="true" id="8c123df9-c4fa-43ee-954a-98b61120b669" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,8 +19,8 @@
       <file leaf-file-name="BounceApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bounce/BounceApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding>
                 <element signature="e#166#167#0" expanded="true" />
                 <element signature="e#215#216#0" expanded="true" />
@@ -566,12 +563,12 @@
       <option name="presentableId" value="Default" />
       <updated>1491225178886</updated>
       <workItem from="1491225188426" duration="1871000" />
-      <workItem from="1491227677777" duration="1130000" />
+      <workItem from="1491227677777" duration="1464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3001000" />
+    <option name="totallyTimeSpent" value="3335000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1375" height="744" extended-state="0" />
@@ -703,8 +700,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bounce/BounceApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="e#166#167#0" expanded="true" />
             <element signature="e#215#216#0" expanded="true" />
