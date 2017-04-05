@@ -37,25 +37,16 @@ public class DisplayManager extends JFrame implements Displayer {
 
     public static DisplayManager getInstance() {
         if (INSTANCE == null) {
-            synchronized (DisplayManager.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = new DisplayManager();
-                }
-            }
+            INSTANCE = new DisplayManager();
         }
         return INSTANCE;
     }
 
     @Override
     public Graphics2D getGraphics() {
-        return (Graphics2D) INSTANCE.getGraphics();
+        return (Graphics2D) super.getGraphics();
     }
 
-    public int getAvailableHeight() {
-        return this.getContentPane().getHeight();
-    }
-
-    public int getAvailableWidth() {return this.getContentPane().getWidth();}
 
     public void addKeyListener(KeyAdapter ka){
 

@@ -4,15 +4,16 @@ import java.util.LinkedList;
 
 public class BounceApp {
 
-    private LinkedList<Bouncable> bouncers;
+    private LinkedList<Bouncable> bouncers = new LinkedList<Bouncable>();
     private Displayer dm;
     public BounceApp() {
         dm = DisplayManager.getInstance();
+        bouncers.add(new BouncableCreator(dm.getWidth()));
     }
     public void loop() {
         while (true) {
             for (Bouncable b : bouncers) {
-                b.move();
+                //b.move();
                 b.draw();
             }
             dm.repaint();
