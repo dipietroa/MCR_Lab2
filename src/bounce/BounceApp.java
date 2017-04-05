@@ -1,8 +1,7 @@
 package bounce;
 
+import java.awt.*;
 import java.util.LinkedList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import static java.lang.Thread.sleep;
 
@@ -53,7 +52,8 @@ public class BounceApp {
         }, 0, 1000 / 100);*/
     }
     public void loop() {
-        dm.getGraphics().clearRect(0, 0, dm.getWidth(), dm.getHeight());
+        dm.getGraphics().setBackground(Color.BLACK);
+        dm.getGraphics().fillRect(0, 0, dm.getWidth(), dm.getHeight());
         for (Bouncable b : bouncers) {
             b.move();
             b.draw();
