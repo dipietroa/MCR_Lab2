@@ -74,7 +74,7 @@ public class DisplayManager extends JFrame implements Displayer {
 
     }
 
-    public void repaint() {
+    /*public void repaint() {
         panel.getGraphics().drawImage(img, 0, 0, new Color(0,0,0),panel);
-    }
+    }*/
 }

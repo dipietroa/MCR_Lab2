@@ -50,7 +50,7 @@ public class BounceApp {
                 while (true) {
                     loop();
                     try {
-                        sleep(10);
+                        sleep(1000);
                     } catch (InterruptedException e) {
                     }
                 }
@@ -62,7 +62,7 @@ public class BounceApp {
                 while (true) {
                     dm.repaint();
                     try {
-                        sleep(10);
+                        sleep(1000);
                     } catch (InterruptedException e) {
                     }
                 }
