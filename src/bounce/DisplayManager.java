@@ -2,6 +2,8 @@ package bounce;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 import java.awt.event.KeyAdapter;
 import java.util.List;
 
@@ -18,24 +20,37 @@ public class DisplayManager extends JFrame implements Displayer {
 
     private DisplayManager() {
 
-        panel = new JPanel() {
-
-            private static final long serialVersionUID = 1L;
-
-            @Override
-            public void paintComponent(Graphics g) {
-                super.paintComponent(g);
-            }
-
-        };
+        panel = new JPanel();
 
         panel.setBackground(Color.WHITE);
-        this.getContentPane().add(panel);
+        this.setContentPane(panel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(0,0, 500, 500);
+        this.setSize(400,400);
         this.setVisible(true);
 
-        img = panel.createImage(500, 500);
+        img = panel.createImage(panel.getWidth(), panel.getHeight());
+
+        panel.addComponentListener(new ComponentListener() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                img = panel.createImage(panel.getWidth(), panel.getHeight());
+            }
+
+            @Override
+            public void componentMoved(ComponentEvent e) {
+
+            }
+
+            @Override
+            public void componentShown(ComponentEvent e) {
+
+            }
+
+            @Override
+            public void componentHidden(ComponentEvent e) {
+
+            }
+        });
     }
 
     public static DisplayManager getInstance() {
@@ -59,8 +74,7 @@ public class DisplayManager extends JFrame implements Displayer {
 
     }
 
-    /*public void repaint() {
-        panel.getGraphics().drawImage(img, 0, 0, null);
-        img.getGraphics().clearRect(0,0,panel.getWidth(),panel.getHeight());
-    }*/
+    public void repaint() {
+        panel.getGraphics().drawImage(img, 0, 0, new Color(0,0,0),panel);
+    }
 }

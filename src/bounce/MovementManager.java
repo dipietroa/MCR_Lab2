@@ -14,8 +14,8 @@ public class MovementManager {
 
     public MovementManager(){
         Random x = new Random();
-        vectx = x.nextDouble() * (0.1 - (-0.1)) + (-0.1);
-        vecty = x.nextDouble() * (0.1 - (-0.1)) + (-0.1);
+        vectx = x.nextDouble() * (3 - (-3)) + (-3);
+        vecty = x.nextDouble() * (3 - (-3)) + (-3);
     }
 
     private double verifyBoundL(double limitL, double pos, double vect, Shape sToMove){

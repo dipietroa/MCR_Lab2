@@ -9,19 +9,20 @@ import java.util.Random;
 /**
  * Created by Adrian on 05.04.2017.
  */
-public class BouncableCreator implements Bouncable {
+public abstract class BouncableCreator implements Bouncable {
     protected int size;
     protected MovementManager mvm;
     protected Color color;
     protected Shape shape;
-    private double vectx;
-    private double vecty;
+    Point initPos = new Point();
 
 
-    public BouncableCreator(){
+    public BouncableCreator(Color color){
+        initPos.x = 30;
+        initPos.y = 30;
+        this.color = color;
         Random r = new Random();
-        shape = new Rectangle(100, 100, 20, 20);
-        //shape = new Ellipse2D.Double(100,100,20,20);
+        size = 30;
         mvm = new MovementManager();
         //this.size = ;
         //this.movement = movement;
@@ -41,18 +42,7 @@ public class BouncableCreator implements Bouncable {
         this.getRenderer().display(DisplayManager.getInstance().getGraphics(), this);
     }
 
-    public Renderable getRenderer(){
-        return new Renderable(){
-            @Override
-            public void display(Graphics2D g, Bouncable b) {
-
-                g.setColor(Color.BLUE);
-                g.setStroke(new BasicStroke(2));
-                g.fill(b.getShape());
-                g.draw(b.getShape());
-            }
-        };
-    }
+    public abstract Renderable getRenderer();
 
     public int getSize() {
         return size;
