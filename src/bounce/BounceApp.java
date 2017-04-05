@@ -14,60 +14,35 @@ public class BounceApp {
         dm = DisplayManager.getInstance();
         bouncers.add(new FilledSquare());
         bouncers.add(new EmptySquare());
-        bouncers.add(new FilledCircle());
-        bouncers.add(new EmptyCircle());
         bouncers.add(new FilledSquare());
-        bouncers.add(new EmptySquare());
-        bouncers.add(new FilledCircle());
-        bouncers.add(new EmptyCircle());
         bouncers.add(new FilledSquare());
-        bouncers.add(new EmptySquare());
-        bouncers.add(new FilledCircle());
-        bouncers.add(new EmptyCircle());
         bouncers.add(new FilledSquare());
-        bouncers.add(new EmptySquare());
-        bouncers.add(new FilledCircle());
-        bouncers.add(new EmptyCircle());
         bouncers.add(new FilledSquare());
-        bouncers.add(new EmptySquare());
-        bouncers.add(new FilledCircle());
-        bouncers.add(new EmptyCircle());
-        bouncers.add(new FilledSquare());
-        bouncers.add(new EmptySquare());
-        bouncers.add(new FilledCircle());
-        bouncers.add(new EmptyCircle());
-        bouncers.add(new FilledSquare());
-        bouncers.add(new EmptySquare());
-        bouncers.add(new FilledCircle());
-        bouncers.add(new EmptyCircle());
-        bouncers.add(new FilledSquare());
-        bouncers.add(new EmptySquare());
-        bouncers.add(new FilledCircle());
-        bouncers.add(new EmptyCircle());
         new Thread(new Runnable() {
             @Override
             public void run() {
                 while (true) {
                     loop();
                     try {
-                        sleep(1000);
+                        sleep(10);
                     } catch (InterruptedException e) {
                     }
                 }
             }
         }).start();
-        new Thread(new Runnable() {
+        /*new Thread(new Runnable() {
             @Override
             public void run() {
                 while (true) {
+                    dm.getGraphics().clearRect(0, 0, dm.getWidth(), dm.getHeight());
                     dm.repaint();
                     try {
-                        sleep(1000);
+                        sleep(10);
                     } catch (InterruptedException e) {
                     }
                 }
             }
-        }).start();
+        }).start();*/
         // Lance la boucle d'exécution
         /*Timer t = new Timer();
         t.schedule(new TimerTask() {
@@ -78,12 +53,12 @@ public class BounceApp {
         }, 0, 1000 / 100);*/
     }
     public void loop() {
-        //dm.getGraphics().clearRect(0, 0, dm.getWidth(), dm.getHeight());
+        dm.getGraphics().clearRect(0, 0, dm.getWidth(), dm.getHeight());
         for (Bouncable b : bouncers) {
             b.move();
             b.draw();
         }
-        //dm.repaint();
+        dm.repaint();
     }
     public static void main(String ... args) {
         new BounceApp();

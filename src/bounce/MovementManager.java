@@ -33,7 +33,7 @@ public class MovementManager {
     public Shape moveShapeCheckingForCollision(Shape sToMove){
         AffineTransform mover = new AffineTransform();
         vectx = verifyBoundL(0, sToMove.getBounds2D().getX(), vectx, sToMove);
-        vecty= verifyBoundL(30, sToMove.getBounds2D().getY(), vecty, sToMove);
+        vecty= verifyBoundL(0, sToMove.getBounds2D().getY(), vecty, sToMove);
         vectx = verifyBoundH(DisplayManager.getInstance().getWidth(), sToMove.getBounds2D().getX(),
                             vectx, sToMove.getBounds2D().getWidth(), sToMove);
         vecty = verifyBoundH(DisplayManager.getInstance().getHeight(), sToMove.getBounds2D().getY(),

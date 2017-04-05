@@ -10,23 +10,24 @@ import java.util.List;
 /**
  * Created by Adrian on 03.04.2017.
  */
-public class DisplayManager extends JFrame implements Displayer {
+public class DisplayManager implements Displayer {
 
     private static final long serialVersionUID = 1L;
 
     private static DisplayManager INSTANCE;
+    private JFrame jf;
     private JPanel panel;
     private Image img;
 
     private DisplayManager() {
-
+        jf = new JFrame();
         panel = new JPanel();
 
         panel.setBackground(Color.WHITE);
-        this.setContentPane(panel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(400,400);
-        this.setVisible(true);
+        jf.setContentPane(panel);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setSize(400,400);
+        jf.setVisible(true);
 
         img = panel.createImage(panel.getWidth(), panel.getHeight());
 
@@ -66,7 +67,7 @@ public class DisplayManager extends JFrame implements Displayer {
 
     @Override
     public Graphics2D getGraphics() {
-        return (Graphics2D) super.getGraphics();
+        return (Graphics2D) img.getGraphics();
     }
 
 
@@ -74,7 +75,19 @@ public class DisplayManager extends JFrame implements Displayer {
 
     }
 
-    /*public void repaint() {
+    public int getHeight(){
+        return panel.getHeight();
+    }
+
+    public int getWidth(){
+        return panel.getWidth();
+    }
+
+    public void setTitle(String title){
+
+    }
+
+    public void repaint() {
         panel.getGraphics().drawImage(img, 0, 0, new Color(0,0,0),panel);
-    }*/
+    }
 }
