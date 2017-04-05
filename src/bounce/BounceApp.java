@@ -13,8 +13,17 @@ public class BounceApp {
     public BounceApp() {
         dm = DisplayManager.getInstance();
         bouncers.add(new FilledSquare());
-        bouncers.add(new EmptySquare());
+        bouncers.add(new FilledCircle());
         bouncers.add(new FilledSquare());
+        bouncers.add(new FilledSquare());
+        bouncers.add(new FilledSquare());
+        bouncers.add(new FilledSquare());
+        bouncers.add(new FilledCircle());
+        bouncers.add(new FilledSquare());
+        bouncers.add(new FilledSquare());
+        bouncers.add(new FilledSquare());
+        bouncers.add(new FilledSquare());
+        bouncers.add(new FilledCircle());
         bouncers.add(new FilledSquare());
         bouncers.add(new FilledSquare());
         bouncers.add(new FilledSquare());
@@ -30,27 +39,6 @@ public class BounceApp {
                 }
             }
         }).start();
-        /*new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    dm.getGraphics().clearRect(0, 0, dm.getWidth(), dm.getHeight());
-                    dm.repaint();
-                    try {
-                        sleep(10);
-                    } catch (InterruptedException e) {
-                    }
-                }
-            }
-        }).start();*/
-        // Lance la boucle d'exécution
-        /*Timer t = new Timer();
-        t.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                loop();
-            }
-        }, 0, 1000 / 100);*/
     }
     public void loop() {
         dm.getGraphics().clearRect(0, 0, dm.getWidth(), dm.getHeight());
