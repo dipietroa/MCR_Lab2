@@ -13,10 +13,12 @@ public class DisplayManager extends JFrame implements Displayer {
     private static final long serialVersionUID = 1L;
 
     private static DisplayManager INSTANCE;
+    private JPanel panel;
+    private Image img;
 
     private DisplayManager() {
 
-        JPanel panel = new JPanel() {
+        panel = new JPanel() {
 
             private static final long serialVersionUID = 1L;
 
@@ -29,15 +31,20 @@ public class DisplayManager extends JFrame implements Displayer {
 
         panel.setBackground(Color.WHITE);
         this.getContentPane().add(panel);
-
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(30, 30, 300, 300);
+        this.setBounds(0,0, 500, 500);
         this.setVisible(true);
+
+        img = panel.createImage(500, 500);
     }
 
     public static DisplayManager getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new DisplayManager();
+            synchronized (DisplayManager.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new DisplayManager();
+                }
+            }
         }
         return INSTANCE;
     }
@@ -51,4 +58,9 @@ public class DisplayManager extends JFrame implements Displayer {
     public void addKeyListener(KeyAdapter ka){
 
     }
+
+    /*public void repaint() {
+        panel.getGraphics().drawImage(img, 0, 0, null);
+        img.getGraphics().clearRect(0,0,panel.getWidth(),panel.getHeight());
+    }*/
 }

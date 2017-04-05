@@ -1,6 +1,7 @@
 package bounce;
 
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Arc2D;
 import java.awt.geom.Ellipse2D;
 import java.util.Random;
@@ -9,18 +10,19 @@ import java.util.Random;
  * Created by Adrian on 05.04.2017.
  */
 public class BouncableCreator implements Bouncable {
-    protected Point center = new Point();
     protected int size;
-    protected Movement movement;
+    protected MovementManager mvm;
     protected Color color;
     protected Shape shape;
+    private double vectx;
+    private double vecty;
 
-    public BouncableCreator(int csize){
-        Random r = new Random(csize);
+
+    public BouncableCreator(){
+        Random r = new Random();
         shape = new Rectangle(100, 100, 20, 20);
-        shape = new Ellipse2D.Double(100,100,20,20);
-        this.center.x = r.nextInt();
-        this.center.y = r.nextInt();
+        //shape = new Ellipse2D.Double(100,100,20,20);
+        mvm = new MovementManager();
         //this.size = ;
         //this.movement = movement;
         //this.color = color;
@@ -32,8 +34,7 @@ public class BouncableCreator implements Bouncable {
 
     @Override
     public void move() {
-        /*center.x += movement.getX();
-        center.y += movement.getY();*/
+        shape = mvm.moveShapeCheckingForCollision(shape);
     }
 
     public void draw(){
@@ -46,17 +47,11 @@ public class BouncableCreator implements Bouncable {
             public void display(Graphics2D g, Bouncable b) {
 
                 g.setColor(Color.BLUE);
-                //g.setStroke(new BasicStroke(2));
+                g.setStroke(new BasicStroke(2));
+                g.fill(b.getShape());
                 g.draw(b.getShape());
             }
         };
-    }
-    public Point getCenter() {
-        return center;
-    }
-
-    public void setCenter(Point center) {
-        this.center = center;
     }
 
     public int getSize() {
@@ -65,14 +60,6 @@ public class BouncableCreator implements Bouncable {
 
     public void setSize(int size) {
         this.size = size;
-    }
-
-    public Movement getMovement() {
-        return movement;
-    }
-
-    public void setMovement(Movement movement) {
-        this.movement = movement;
     }
 
     public Color getColor() {
